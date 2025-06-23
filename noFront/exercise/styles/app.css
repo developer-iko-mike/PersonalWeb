@@ -1,0 +1,41 @@
+body {
+    font-family: sans-serif;
+}
+
+.content {
+    background-color: rgb(26, 200, 243);
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: rgb(65, 65, 65);
+}
+
+.header .content,
+.footer .content {
+    height: 6rem;
+}
+
+
+/* 
+
+- Colors
+
+*/
+
+.yellow {
+    background-color: #F3DD48;
+}
+
+.violet {
+    background-color: #9068FF;
+}
+
+.pink {
+    background-color: #FF68CD;
+}
+
+.green {
+    background-color: #3BF8D8;
+}

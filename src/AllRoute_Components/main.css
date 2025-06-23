@@ -1,0 +1,66 @@
+/**************************
+---------------------------
+======= Font Family =======
+---------------------------
+**************************/
+
+@font-face {
+  font-family: "poppins";
+  src: url("../../public/fonts/Poppins-Black.ttf") format("truetype");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url("../../public/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url("../../public/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url("../../public/fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url("../../public/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 300;
+}
+
+/**************************
+---------------------------
+====== Root Varebale ======
+---------------------------
+**************************/
+
+:root{
+--text: #333333;
+--shadow: rgba(19, 182, 255 , 0.24);
+--bg: #fff;
+--sectionBG: #fff;
+--main: #0abead;
+--mainOrange: #f57f17;
+}
+
+/**************************
+---------------------------
+======= Basic style =======
+---------------------------
+**************************/
+
+html{
+  font-size: 10px;
+}
+
+body{
+  font-family: "poppins";
+  font-size: 1.6rem;
+  line-height: 1.5;
+}

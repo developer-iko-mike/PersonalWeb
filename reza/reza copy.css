@@ -1,0 +1,33 @@
+.menu {
+  background-color: rgb(250, 200, 0);
+  height: 100px;
+  width: 101.2%;
+  margin: 0px -8px;
+  float: left;
+  border-radius: 0px;
+}
+
+.intro {
+  background-color: rgb(30, 30, 30);
+  margin: -8px -8px;
+  width: 101.2%;
+  height: 800px;
+}
+
+.log {
+  height: 60px;
+  width: 110px;
+  margin-left: 1200px;
+  margin-top: 10px;
+}
+
+.buy {
+  background-color: rgb(25, 200, 0);
+  height: 100px;
+  width: 100px;
+  font-family: "Vazir", sans-serif;
+  margin-left: 1000px;
+  margin-top: -100px;
+  font-size: 20px;
+  border: 0;
+}

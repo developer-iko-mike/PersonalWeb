@@ -1,0 +1,128 @@
+--- Start App.jsx ---
+import React, { useContext, useEffect, useState } from "react";
+import Header from "../AllRoute_Components/header/Header";
+import routes from "../AllRoute_Components/routes";
+import { useRoutes } from "react-router-dom";
+import ThemeContext from "../AllRoute_Components/themeContext";
+import Footer from "../AllRoute_Components/footer/Footer";
+import ChangeThemeBTN from "../AllRoute_Components/changeThemeBTN/ChangeThemeBTN";
+
+export default function App() {
+  let router = useRoutes(routes);
+
+  const [localStorageBG, setLocalStorageBG] = useState(null);
+  const [localStorageSectionBG, setLocalStorageSectionBG] = useState(null);
+
+  const handleEmptyThemeValue = async () => {
+    if (!JSON.parse(localStorage.getItem("theme"))) {
+      console.log("don't have theme");
+      await localStorage.setItem(
+        "theme",
+        JSON.stringify({
+          bodyBG: "#fff",
+          sectionBG: "#fff",
+        })
+      );
+    } else {
+      console.log("have theme");
+    }
+  };
+
+  const getThemeFromLocalStorage = async () => {
+    const themeBG1 = await JSON.parse(localStorage.getItem("theme")).bodyBG;
+    const themeBG2 = await JSON.parse(localStorage.getItem("theme")).sectionBG;
+    setLocalStorageBG(themeBG1);
+    setLocalStorageSectionBG(themeBG2);
+  };
+
+  useEffect(() => {
+    handleEmptyThemeValue();
+    getThemeFromLocalStorage()
+  }, []);
+
+  useEffect(() => {
+    getThemeFromLocalStorage();
+    console.log("localStorageBG ,localStorageSectionBG",localStorageBG ,localStorageSectionBG);
+  }, [localStorageBG, localStorageSectionBG]);
+
+  return (
+    <ThemeContext.Provider value={{ localStorageBG, localStorageSectionBG }}>
+      <Header />
+      <ChangeThemeBTN />
+      {router}
+      <Footer />
+    </ThemeContext.Provider>
+  );
+}
+--- Finish App.jsx ---
+
+
+
+--- Start themeContext.js ---
+import { createContext } from "react";
+
+const ThemeContext = createContext({
+  bodyBG: null,
+  sectionBG: null,
+});
+
+export default ThemeContext;
+--- Finish themeContext.js ---
+
+
+
+--- Start ChangeThemeBTN.jsx ---
+import React from "react";
+
+export default function ChangeThemeBTN() {
+  const changeTheme = () => {
+    if (
+      !JSON.parse(localStorage.getItem("theme")) ||
+      JSON.parse(localStorage.getItem("theme")).bodyBG === "#000"
+    ) {
+      localStorage.setItem(
+        "theme",
+        JSON.stringify({
+          bodyBG: "#fff",
+          sectionBG: "#fff",
+        })
+      );
+    } else {
+      localStorage.setItem(
+        "theme",
+        JSON.stringify({
+          bodyBG: "#000",
+          sectionBG: "#000",
+        })
+      );
+    }
+  };
+
+  return (
+    <div className="pbl1-5">
+      <button className="b btn1 fs2 bsbd br10" onClick={changeTheme}>
+        change theme
+      </button>
+    </div>
+  );
+}
+
+--- Finish ChangeThemeBTN.jsx ---
+
+
+
+--- Start Home.jsx ---
+import React, { useContext } from "react";
+import ThemeContext from "../../AllRoute_Components/themeContext";
+
+export default function Home() {
+  const themeContext = useContext(ThemeContext);
+  console.log("themeContext", themeContext);
+  return (
+    <div className="h100vh" style={{ backgroundColor: themeContext.localStorageBG }}>
+      lorem lorem
+    </div>
+  );
+}
+
+--- Finish Home.jsx ---
