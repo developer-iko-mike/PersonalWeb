@@ -1,27 +1,6 @@
-header{
-    
+header {
+  box-shadow: 0 0.5rem 4rem rgb(4, 195, 65, 0.16);
 }
-nav{
-    
-}
-.headerLogo{
-
-}
-.navList{
-
-}
-.navListItem{
-
-}
-.navListItem__active{
-
-}
-.navListItemLink{
-
-}
-.nav__toggle___icon{
-
-}
-.nav__toggle___line{
-
+.headerLogo {
+  font-size: 6rem;
 }

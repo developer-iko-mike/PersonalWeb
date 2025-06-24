@@ -41,12 +41,11 @@
 **************************/
 
 :root {
-  --text: #333333;
-  --shadow: rgba(19, 182, 255, 0.24);
-  --body: #fff;
-  --section: #fff;
-  --main: #0abead;
-  --mainOrange: #f57f17;
+   --text: #333333; /* text-color */
+   --body: #fff;/* app-bg-color */
+   --section: #fff;/* section-bg-color */
+   --main: #0abead;/* primary color */
+   --mainOrange: #f57f17; /* secondary orange color */
   --fpoppins: "poppins"
 }
 
@@ -64,10 +63,11 @@ body {
   font-family: "poppins";
   font-size: 1.6rem;
   line-height: 1.5;
+  scroll-behavior: smooth !important;
 }
 
-body {
-  scroll-behavior: smooth !important;
+a {
+  color: var(--text);
 }
 
 /******************************
@@ -76,6 +76,9 @@ body {
 -------------------------------
 ******************************/
 
+.ctext {
+  color: var(--text);
+}
 .cmain {
   color: var(--main);
 }
@@ -87,6 +90,9 @@ body {
 }
 .csection {
   color: var(--section);
+}
+.bgtext {
+  background-color: var(--text);
 }
 .bgbody {
   background-color: var(--body);

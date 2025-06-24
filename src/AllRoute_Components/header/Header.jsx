@@ -16,20 +16,20 @@ const Header = () => {
   ]);
 
   return (
-    <header className="bgblue">
+    <header className="bgsection">
       <div className="container">
-        <nav className="djsb">
-          <h1 className="headerLogo cmain">iKO.Dev</h1>
-          <ul className="navList">
+        <nav className="djspac ptb1-5">
+          <h1 className="headerLogo cmain fpop fwBold fs5 m0 ttnone">iKO.Dev</h1>
+          <ul className="navList dac g4">
             {headerItem.map((item) => (
               <li
                 onClick={() => setActiveItem(item.title)}
-                className={`navListItem ${
-                  activeItem === item.title ? "navListItem__active" : ""
-                }`}
+                className={`navListItem`}
                 key={item.id}
               >
-                <a href={`#${item.link}`} className="navListItemLink">
+                <a href={`#${item.link}`} className={`navListItemLink dib c fpop fwmedium ctext ${
+                  activeItem === item.title ? "navListItemLink__active cmain" : ""
+                }`}>
                   {item.title}
                 </a>
               </li>
