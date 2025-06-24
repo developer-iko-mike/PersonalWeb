@@ -1,10 +1,7 @@
 import React, { useContext } from "react";
-import ThemeContext from "../../AllRoute_Components/themeContext";
+import "./home.css";
 
 export default function Home() {
-  const {
-    theme: { bodyBg, sectionBg },
-  } = useContext(ThemeContext);
 
   return (
     <>
