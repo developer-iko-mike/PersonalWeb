@@ -8,7 +8,7 @@ export default function ChangeThemeBTN({onThemeChange}) {
   // console.log(themeContext);
 
   return (
-    <div className="pf b1-5 l1-5">
+    <div className="pf b1-5 l1-5 z100">
       <button className="b btn1 fs2 bsbd br10" onClick={onThemeChange}>
         change theme
       </button>

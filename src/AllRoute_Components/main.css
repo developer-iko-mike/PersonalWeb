@@ -41,12 +41,18 @@
 **************************/
 
 :root {
-   --text: #333333; /* text-color */
-   --body: #fff;/* app-bg-color */
-   --section: #fff;/* section-bg-color */
-   --main: #0abead;/* primary color */
-   --mainOrange: #f57f17; /* secondary orange color */
-  --fpoppins: "poppins"
+  --text: #333333; /* text-color */
+  --body: #fff; /* app-bg-color */
+  --section: #fff; /* section-bg-color */
+  --main: #0abead; /* primary color */
+  --mainOrange: #f57f17; /* secondary orange color */
+  --fpoppins: "poppins";
+}
+
+.darkTheme{
+  --body: #000; /* app-bg-color */
+  --section: #222222; /* section-bg-color */
+  --text: #fff;
 }
 
 /**************************
@@ -60,6 +66,7 @@ html {
 }
 
 body {
+  background-color: var(--body);
   font-family: "poppins";
   font-size: 1.6rem;
   line-height: 1.5;
@@ -109,6 +116,30 @@ a {
 
 /* -------- font family ---------- */
 
-.fp , .fpop , .fpopins , .fpoppins , .poppins {
+.fp,
+.fpop,
+.fpopins,
+.fpoppins,
+.poppins {
   font-family: var(--fpoppins);
 }
+
+/* -------- Z index ---------- */
+
+.z99 {
+  z-index: 99;
+}
+.z101 {
+  z-index: 101;
+}
+
+/***************************
+----------------------------
+======== Responsive ========
+----------------------------
+***************************/
+
+@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 992px) {}
+@media screen and (max-width: 768px) {}
+@media screen and (max-width: 576px) {}
