@@ -1,0 +1,94 @@
+#home {
+  padding-top: 22rem;
+}
+.home__username {
+  font-weight: 600;
+}
+.home_caption {
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+.home_photo {
+  width: 50rem;
+  height: 50rem;
+  border-radius: 100%;
+  background-image: url(./image/avatar.jpg) !important;
+  background-repeat: no-repeat;
+  background-position: center top;
+  box-shadow: 0 0 4rem rgba(96, 233, 255, 27%);
+  border: 2rem solid var(--section);
+}
+
+.darkTheme .landingWaves path {
+  fill: #1f2935;
+}
+
+@media screen and (max-width: 1200px) {
+  .home_photo {
+    width: 43rem;
+    height: 43rem;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .home_title {
+    font-size: 4.5rem;
+  }
+
+  .home__username {
+    font-size: 2.2rem;
+  }
+
+  .home_caption {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .home_photo {
+    width: 32rem;
+    height: 33rem;
+  }
+
+  .home_title {
+    font-size: 3.7rem;
+  }
+
+  .home__username {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cl-sm-fdcr {
+    flex-direction: column-reverse;
+  }
+
+  #home {
+    padding-top: 14rem;
+  }
+
+  .col-md-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .home_name {
+    margin-top: 3rem;
+  }
+
+  .home_caption {
+    margin-bottom: 2.5rem;
+  }
+
+  .home_name,
+  .home_links__warraper {
+    justify-content: center;
+  }
+
+
+  .home_title,
+  .home_caption {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 576px) {
+}

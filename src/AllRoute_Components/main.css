@@ -31,7 +31,7 @@
 @font-face {
   font-family: "poppins";
   src: url("../../public/fonts/Poppins-Regular.ttf") format("truetype");
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /**************************
@@ -67,21 +67,23 @@ html {
 
 body {
   background-color: var(--body);
+  color: var(--text);
   font-family: "poppins";
   font-size: 1.6rem;
   line-height: 1.5;
   scroll-behavior: smooth !important;
+  /* overflow-x: hidden; */
 }
 
 a {
   color: var(--text);
 }
 
-/******************************
--------------------------------
-======= Bootstrap Style =======
--------------------------------
-******************************/
+/*****************************
+------------------------------
+======= Helper classes =======
+------------------------------
+*****************************/
 
 .ctext {
   color: var(--text);

@@ -3,8 +3,10 @@ import "./resume.css"
 
 const Resume = () => {
   return (
-    <div>Resume</div>
+    <div>
+      
+    </div>
   )
 }
 
-export default Resume
+export default Resume;

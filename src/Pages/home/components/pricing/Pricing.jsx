@@ -3,8 +3,10 @@ import "./pricing.css"
 
 const Pricing = () => {
   return (
-    <div>Pricing</div>
+    <div>
+      
+    </div>
   )
 }
 
-export default Pricing
+export default Pricing;

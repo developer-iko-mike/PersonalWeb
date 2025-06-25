@@ -3,8 +3,10 @@ import "./services.css"
 
 const Services = () => {
   return (
-    <div>Services</div>
+    <div>
+      
+    </div>
   )
 }
 
-export default Services
+export default Services;
