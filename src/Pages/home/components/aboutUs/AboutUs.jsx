@@ -21,14 +21,14 @@ const AboutUs = () => {
           classNames="ptb5"
         />
         <div className="about_warraper rw bgsection djsb">
-          <div className="about_cover cl-6">
+          <div className="about_cover cl-12 cl-lg-6">
             <img
               src="/home/aboutUs/about-us-man.jpg"
               alt="about us man"
               className="about_image w100 h100 of"
             />
           </div>
-          <div className="about_content cl-6">
+          <div className="about_content cl-12 cl-lg-6">
             <h4 className="about_content__title mb1 fw600">why choose me ?</h4>
             <p className="about_content__caption mb7">
               Lorem ipsum, or lipsum as it is sometimes known, is dummy text
@@ -48,11 +48,11 @@ const AboutUs = () => {
               ))}
             </ul>
             <div className="about_content__btnWrapper dac g3">
-              <BtnPerson title={"Hire me"} elam={"a"} classNames="bgmain" />
+              <BtnPerson title={"Hire me"} elam={"a"} classNames="bgmain about_content__btn" />
               <BtnPerson
                 title={"get resume"}
                 elam={"a"}
-                classNames="bgmainOrange"
+                classNames="bgmainOrange about_content__btn"
               />
             </div>
           </div>

@@ -26,11 +26,11 @@ const Landing = () => {
                 freelancer web / mobile uI/uX designer with motion graphics
               </p>
               <div className="home_links__warraper mt2 dac g3">
-                <BtnPerson title={"Hire me"} elam={"a"} classNames="bgmain" />
+                <BtnPerson title={"Hire me"} elam={"a"} classNames="bgmain home_link" />
                 <BtnPerson
                   title={"get resume"}
                   elam={"a"}
-                  classNames="bgmainOrange"
+                  classNames="bgmainOrange home_link"
                 />
               </div>
             </div>
