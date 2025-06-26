@@ -1,0 +1,26 @@
+.sectionHeader_title {
+  font-size: 4.5rem;
+}
+.sectionHeader_caption {
+  margin: 0.5rem 0 2rem 0;
+  letter-spacing: 0.25rem;
+}
+.sectionHeader_line {
+  position: relative;
+  width: 20rem;
+  height: .2rem;
+}
+.sectionHeader_shape {
+  position: absolute;
+  width: 2.8rem;
+  height: 0.8rem;
+  background-color: var(--main);
+  border-radius: 2rem;
+  cursor: move;
+}
+
+.sectionHeader_shape {
+  width: 2.8rem; /* عرض مستطیل کوچک (قابل تغییر) */
+  height: 0.8rem; /* ارتفاع مستطیل کوچک (قابل تغییر) */
+  cursor: none;
+}

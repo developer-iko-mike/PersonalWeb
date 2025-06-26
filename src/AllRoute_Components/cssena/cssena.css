@@ -519,28 +519,31 @@
      🏋️ FONT WEIGHT STYLES (100 → boldest)
   ============================================== 
 */
-.fwthin {
+.fwthin , .fw1 , .fw100 {
   font-weight: 100;
 }
-.fwLight {
+.fwLight , .fw3 , .fw300 {
   font-weight: 300;
 }
-.fwlight {
+.fwlight , .fwlighter {
   font-weight: lighter;
 }
-.fwMedium {
-  font-weight: 700;
-}
-.fwmedium {
+.fwmedium , .fwnormal {
   font-weight: normal;
 }
-.fwBold {
+.fwMedium , .fw5 , .fw500 {
+  font-weight: 500;
+}
+.fwBold , .fw7 , .fw700 {
+  font-weight: 700;
+}
+.fwBlack , .fw9 , .fw900 {
   font-weight: 900;
 }
 .fwbold {
   font-weight: bold;
 }
-.fwBolder {
+.fwBolder , .fwbolder{
   font-weight: bolder;
 }
 /* 
@@ -844,7 +847,7 @@
   border-radius: 1.5rem;
 }
 .br2 {
-  border-radius: 1rem;
+  border-radius: 2rem;
 }
 .br10 {
   border-radius: 10rem;

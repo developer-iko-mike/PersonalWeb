@@ -50,9 +50,10 @@
 }
 
 .darkTheme{
-  --body: #000; /* app-bg-color */
-  --section: #222222; /* section-bg-color */
-  --text: #fff;
+  --body: #161D26; /* app-bg-color */
+  --section: #1F2935; /* section-bg-color */
+  /* --text: #fff; */
+  --text: #95A5C6;
 }
 
 /**************************
@@ -114,6 +115,10 @@ a {
 }
 .bgsection {
   background-color: var(--section);
+}
+
+.fw600 {
+  font-weight: 600;
 }
 
 /* -------- font family ---------- */

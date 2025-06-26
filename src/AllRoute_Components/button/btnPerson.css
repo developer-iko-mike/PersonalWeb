@@ -18,6 +18,6 @@ align-items: center;
     opacity: .75;
     transform: scale(1.03);
 }
-.linkPerson{
 
-}
+@media screen and (max-width: 768px) { .btnPerson{  width: 17rem;  } }
+.linkPerson{}
