@@ -23,7 +23,7 @@ const SectionHeading = ({ title, caption, draggable = true , isCaptionTeal , cla
 
   return (
     <div className={`cl-12 dfcjac ${classNames}`}>
-      <h3 className='sectionHeader_title cmain fwMedium'>{title}</h3>
+      <h3 className='sectionHeader_title cmain fw700'>{title}</h3>
       <p className={`sectionHeader_caption ${isCaptionTeal ? "cmain" : ""}`}>{caption}</p>
       <div 
         className='sectionHeader_line djac pr br2 bgmain' 

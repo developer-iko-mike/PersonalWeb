@@ -6,10 +6,8 @@
 .about_content__list___title { font-size: 1.8rem; }
 .about_content__list { padding-left: 3.2rem; }
 .about_content__listItem::before {
-    content: "";
     width: 1.5rem;
     height: 1.5rem;
-    position: absolute;
     background-color: var(--mainOrange);
     border-radius: 100%;
     top: 50%;

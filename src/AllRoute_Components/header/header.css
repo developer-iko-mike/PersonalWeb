@@ -4,6 +4,8 @@ header {
 }
 .headerLogo {
   font-size: 6rem;
+
+  font-family: cursive !important;
   /* text-shadow: 1px 3px 2rem var(--main); */
 }
 
@@ -17,8 +19,6 @@ header {
 
 .nav__toggle___line::before,
 .nav__toggle___line::after {
-  content: "";
-  position: absolute;
   width: 4.5rem;
   height: 0.4rem;
   background-color: var(--main);

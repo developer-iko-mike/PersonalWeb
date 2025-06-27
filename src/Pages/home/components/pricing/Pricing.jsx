@@ -3,9 +3,9 @@ import "./pricing.css"
 
 const Pricing = () => {
   return (
-    <div>
+    <section id='pricing'>
       
-    </div>
+    </section>
   )
 }
 

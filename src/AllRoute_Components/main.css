@@ -49,11 +49,11 @@
   --fpoppins: "poppins";
 }
 
-.darkTheme{
-  --body: #161D26; /* app-bg-color */
-  --section: #1F2935; /* section-bg-color */
+.darkTheme {
+  --body: #161d26; /* app-bg-color */
+  --section: #1f2935; /* section-bg-color */
   /* --text: #fff; */
-  --text: #95A5C6;
+  --text: #95a5c6;
 }
 
 /**************************
@@ -73,7 +73,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   scroll-behavior: smooth !important;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 a {
@@ -142,16 +142,33 @@ a {
 
 /***************************
 ----------------------------
+======== Before style ========
+----------------------------
+***************************/
+
+.nav__toggle___line::before,
+.nav__toggle___line::after ,
+.about_content__listItem::before,
+.resume_list::before,
+.resume_list__item::before,
+.resume_detail::before,
+.resume_detailItem__headTiTle::before {
+  content: "";
+  position: absolute;
+}
+
+/***************************
+----------------------------
 ======== Responsive ========
 ----------------------------
 ***************************/
 
 @media screen and (min-width: 1400px) {
-  .container{
-    width: 1300px;
+  .container {
+    width: 1250px;
   }
 }
 @media screen and (max-width: 1200px) {}
-@media screen and (max-width: 992px) {}
-@media screen and (max-width: 768px) {}
-@media screen and (max-width: 576px) {}
+@media screen and (max-width: 992px)  {}
+@media screen and (max-width: 768px)  {}
+@media screen and (max-width: 576px)  {}
