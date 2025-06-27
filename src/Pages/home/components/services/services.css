@@ -1,8 +1,6 @@
 #services {}
 .services__warraper { row-gap: 2.6rem;}
-.service_webDesign {
-  background-color: #8540ff;
-}
+.service_webDesign { background-color: #8540ff; }
 .service_interfaceDesign { background-color: #FFC50C; }
 .service_webDevelopment { background-color: #EC407A; }
 .service_uXDesign { background-color: #FF6331; }
@@ -11,14 +9,18 @@
 .service { padding: 7rem 3.5rem; }
 .service_title { font-size: 2.4rem; }
 .service_caption { max-width: 30rem; }
-.service_icon {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100% !important;
-    z-index: -1;
-  }
-  
-  .service_icon{
+.service_icon {}
+
+@media screen and (max-width: 1200px) {
+.service { padding: 5rem 2.5rem; }
+}
+@media screen and (max-width: 768px) {
+.service { padding: 5rem 2rem; }
+.service_title { font-size: 2rem; }
+.service_caption { font-size: 1.5rem; }
+}
+@media screen and (max-width: 576px) {
+  .service { padding: 5rem 3rem; }
+.service_title { font-size: 2.6rem; }
+.service_caption { font-size: 1.6rem; }
 }

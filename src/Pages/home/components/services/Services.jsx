@@ -65,14 +65,14 @@ const Services = () => {
     <section id="services">
       <SectionHeading title={"services"} caption={"what we provide you ?"} />
       <div className="container ptb5">
-        <div className="rw services__warraper">
+        <div className="rw services__warraper cwhite">
           {serviceItem.map((item) => (
-            <div key={item.id} className="cl-4">
+            <div key={item.id} className="cl-12 cl-sm-6 cl-lg-4">
             <Service
               title={item.title}
               icon={item.icon}
               caption={item.caption}
-              classNames={`dfcjac g2-5 br-5 w100 ${item.color}`}
+              classNames={`tc dfcjac g2-5 br-5 w100 ${item.color}`}
               />
               </div>
           ))}
