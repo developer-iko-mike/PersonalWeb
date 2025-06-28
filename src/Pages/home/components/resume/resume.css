@@ -1,21 +1,3 @@
-#resume {
-  margin-top: 15rem;
-  margin-bottom: 40rem;
-}
-
-.darkTheme .resume_rotateSection {
-  box-shadow: none;
-}
-
-.resume_rotateSection {
-  width: 120vw;
-  height: 80vh;
-  left: -10rem;
-  transform: rotate(-6deg);
-  box-shadow: 0 0 4rem rgb(96 233 255 / 27%);
-  background-color: var(--section);
-}
-
 .resume_list {
   box-shadow: 0 0 4rem rgb(96 233 255 / 27%);
   position: relative;
@@ -48,8 +30,9 @@
   background-color: var(--main);
   border-radius: 3rem;
   width: 19%;
-  height: 4rem;
+  height: 4.4rem;
   transition: all 0.25s ease-in-out 0.03s;
+  box-shadow: 0 0 4rem rgba(96, 233, 255, 27%);
 }
 
 .resume_list__item___activate::before {
@@ -62,6 +45,7 @@
   font-size: 1.8rem;
   position: relative;
   z-index: 10;
+  transition: all 0.25s ease-in;
 }
 
 .resume_list__item___activate .resume_list__item___title {
@@ -70,14 +54,7 @@
 
 .resume_detail {
   padding-left: 3rem;
-}
-
-.resume_detail::before {
-  background-color: var(--main);
-  width: 0.3rem;
-  height: 100%;
-  left: 0;
-  border-radius: 5rem;
+  border-left: 3px solid var(--main);
 }
 
 .resume_detailItem__time {
@@ -100,6 +77,142 @@
   height: 2rem;
   left: -3.828rem;
   bottom: 0;
-  top: 0;
+  top: 4px;
   border-radius: 100%;
+}
+
+/* حالت اولیه بدون انیمیشن */
+.resume_detail {
+  padding-top: 1.3rem;
+  padding-left: 2.67rem;
+  opacity: 1; /* تغییر از 0 به 1 */
+}
+
+/* حالت اولیه برای آیتم‌ها */
+.resume_detailItem {
+  opacity: 1; /* تغییر از 0 به 1 */
+}
+
+/* کلاس‌های انیمیشن فقط هنگام فعال‌سازی */
+.resume_detail.animate {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.resume_detail.animate .resume_detailItem {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUpItem 0.4s ease-out forwards;
+}
+
+.resume_detail.animate .resume_detailItem:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.resume_detail.animate .resume_detailItem:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.resume_detail.animate .resume_detailItem:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+.pr6l1-5 {
+  padding-left: 6rem;
+  padding-right: 1.5rem;
+}
+
+/* تعریف انیمیشن‌ها (بدون تغییر) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUpItem {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+  .resume_detail.animate {
+    animation: fadeInUp 0.32s ease-out forwards;
+  }
+  .resume_detail.animate .resume_detailItem {
+    animation: fadeInUpItem 0.3s ease-out forwards;
+  }
+
+  .undisplay_resumeList__item {
+    display: flex;
+  }
+
+  .resume_list {
+    display: none;
+  }
+
+  .resume_detail__wrapper {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .undisplay_resumeList__item {
+    color: var(--text);
+  }
+  .undisplay_resumeList__item___activate {
+    background-color: var(--main);
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .resume_detailItem__headTiTle {
+    max-width: 25rem;
+  }
+}
+@media screen and (max-width: 460px) {
+  .undisplay_resumeList__item {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .resume_detailItem__headTiTle {
+    font-size: 1.7rem;
+  }
+  .resume_detailItem__title {
+    font-size: 1.5rem;
+  }
+  .resume_detailItem__caption {
+    font-size: 1.4rem;
+  }
+  .resume_detailItem__time {
+    text-align: center;
+  }
+  .resume_detailItem__headTiTle___and____time {
+    gap: 1rem;
+  }
+
+  .resume_detail {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .resume_detailItem__headTiTle::before {
+    width: 1rem;
+    height: 1rem;
+    left: -1.6rem;
+    top: -2px;
+    margin: auto;
+    opacity: 0.75;
+  }
 }

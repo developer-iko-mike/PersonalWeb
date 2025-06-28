@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SectionHeading from "../../../../AllRoute_Components/sectionHeading/SectionHeading";
 import UsergraduateSVG from "./SVGs/UsergraduateSVG";
 import HistorySVG from "./SVGs/HistorySVG";
@@ -157,65 +157,104 @@ const Resume = () => {
   ]);
   const [activeListItem, setActiveListItem] = useState("Programming Skills");
 
+  const [animate, setAnimate] = useState(false);
+
   const handleChangeDisplayItemAndActiveItem = (list, title) => {
+    setAnimate(true);
     setDisplayShowList(list);
     setActiveListItem(title);
   };
 
+  useEffect(() => {
+    if (animate) {
+      const timer = setTimeout(() => setAnimate(false), 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [animate]);
+
   return (
-    <section id="resume">
-      <div className="resume_rotateSection pa r0 z-" />
-      <SectionHeading
-        title={"resume"}
-        caption={"my formal bio details"}
-        classNames="pr pt7"
-      />
-      <div className="container">
-        <div className="rw aic" style={{ paddingTop: 50 }}>
-          <div className="cl-3">
-            <ul className="resume_list bgbody dfc acc g3-5 ptb5 plr1">
-              {resumeList.map((resume) => (
-                <li
-                  className={`resume_list__item pr dac z10 g3 cp ${
-                    activeListItem === resume.title
-                      ? "resume_list__item___activate"
-                      : ""
-                  }`}
-                  onClick={() => handleChangeDisplayItemAndActiveItem(
-                    resume.list,
-                    resume.title
-                  )}
-                  key={resume.id}
-                >
-                  {resume.icon}
-                  <span className="resume_list__item___title fw600">
-                    {resume.title}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="cl-9">
-            <ul className="resume_detail dfc g2 pr">
-              {displayShowList.map((item) => (
-                <li className="resume_detailItem" key={item.id}>
-                  <div className="resume_detailItem__headTiTle___and____time djspac">
-                    <h3 className="resume_detailItem__headTiTle fw600 pr dac">
-                      {item.headTiTle}
-                    </h3>
-                    {item.time && (
-                      <div className="resume_detailItem__time bgmainOrange cwhite plr1 ptb-2 br2">
-                        {item.time}
-                      </div>
-                    )}
-                  </div>
-                  <h4 className="resume_detailItem__title fw600">
-                    {item.title}
-                  </h4>
-                  <p className="resume_detailItem__caption">{item.caption}</p>
-                </li>
-              ))}
-            </ul>
+    <section id="resume" className="resume rotatedSection">
+      <div className="unRotatedSection">
+        <SectionHeading
+          title={"resume"}
+          caption={"my formal bio details"}
+          classNames="pr pt7"
+        />
+        <div className="container">
+          <ul className="undisplay_resumeList dac g2 fw mt3">
+            {resumeList.map((item) => (
+              <li
+                className={`undisplay_resumeList__item plr3 ptb1-5 cwhite fw600 br10 aic g1-5 dnone cp ${
+                  activeListItem === item.title
+                    ? "undisplay_resumeList__item___activate"
+                    : ""
+                }`}
+                key={item.id}
+                onClick={() =>
+                  handleChangeDisplayItemAndActiveItem(item.list, item.title)
+                }
+              >
+                {activeListItem === item.title ? item.icon : null}
+                {item.title}
+              </li>
+            ))}
+          </ul>
+
+          <div className="rw aic" style={{ paddingTop: 50 }}>
+            <div className="cl-3">
+              <ul className="resume_list bgbody dfc jcc g3-5 ptb5 plr1">
+                {resumeList.map((resume) => (
+                  <li
+                    className={`resume_list__item pr dac z10 g3 cp ${
+                      activeListItem === resume.title
+                        ? "resume_list__item___activate"
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handleChangeDisplayItemAndActiveItem(
+                        resume.list,
+                        resume.title
+                      )
+                    }
+                    key={resume.id}
+                  >
+                    {resume.icon}
+                    <span className="resume_list__item___title fw600">
+                      {resume.title}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="resume_detail__wrapper cl-12 cl-lg-9 pr6l1-5">
+              <ul
+                className={`resume_detail dfc g2 pr ${
+                  animate ? "animate" : ""
+                }`}
+                key={activeListItem}
+              >
+                {displayShowList.map((item) => (
+                  <li className="resume_detailItem" key={item.id}>
+                    <div className="resume_detailItem__headTiTle___and____time djspac">
+                      <h3 className="resume_detailItem__headTiTle fw600 pr dac">
+                        {item.headTiTle}
+                      </h3>
+                      {item.time && (
+                        <div className="resume_detailItem__time bgmainOrange cwhite plr1 ptb-2 br2">
+                          {item.time}
+                        </div>
+                      )}
+                    </div>
+                    <h4 className="resume_detailItem__title fw600">
+                      {item.title}
+                    </h4>
+                    <p className="resume_detailItem__caption">
+                      {item.caption}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

@@ -140,6 +140,22 @@ a {
   z-index: 101;
 }
 
+.rotatedSection {
+  box-shadow: 0 0 6rem rgb(19 182 255 / 24%);
+  margin-top: 20rem;
+  margin-bottom: 10rem;
+  padding: 3rem 0 15rem 0;
+  transform: skewY(-6deg);
+  background-color: var(--section);
+}
+.unRotatedSection {
+  transform: skewY(6deg);
+}
+
+.darkTheme .rotatedSection {
+  box-shadow: none;
+}
+
 /***************************
 ----------------------------
 ======== Before style ========
