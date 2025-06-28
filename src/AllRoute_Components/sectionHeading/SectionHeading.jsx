@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Draggable from 'react-draggable';
 import "./sectionHeading.css";
 
-const SectionHeading = ({ title, caption, draggable = true , isCaptionTeal , classNames = "" }) => {
+const SectionHeading = ({ title, caption, draggable = true , classNames = "" }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const lineRef = useRef(null);
   const [bounds, setBounds] = useState({ left: 0, right: 0 });
@@ -24,7 +24,7 @@ const SectionHeading = ({ title, caption, draggable = true , isCaptionTeal , cla
   return (
     <div className={`cl-12 dfcjac ${classNames}`}>
       <h3 className='sectionHeader_title cmain fw700'>{title}</h3>
-      <p className={`sectionHeader_caption ${isCaptionTeal ? "cmain" : ""}`}>{caption}</p>
+      <p className={`sectionHeader_caption`}>{caption}</p>
       <div 
         className='sectionHeader_line djac pr br2 bgmain' 
         ref={lineRef}
