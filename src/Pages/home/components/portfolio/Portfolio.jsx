@@ -1,6 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SectionHeading from "../../../../AllRoute_Components/sectionHeading/SectionHeading";
+import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "./portfolio.css";
 import "./portfolio.css";
 
 const Portfolio = () => {
@@ -21,8 +28,10 @@ const Portfolio = () => {
       id: 2,
       title: "CMS",
       list: [
-        { id: 1, image: "cms/1.png", link: "www.github.com/" },
-        { id: 1, image: "cms/2.png", link: "www.github.com/" },
+        { id: 1, image: "cms/1-1.png", link: "www.github.com/" },
+        { id: 2, image: "cms/1-2.png", link: "www.github.com/" },
+        { id: 3, image: "cms/2-1.png", link: "www.github.com/" },
+        { id: 4, image: "cms/2-2.png", link: "www.github.com/" },
       ],
     },
     {
@@ -80,12 +89,12 @@ const Portfolio = () => {
   ]);
   const [activatePortfolio, setActivatePortfolio] = useState("Web UI");
 
-  const handleChangeDisplayItemAndActivePortfolio = (title, list) => {
+  const handleChangeDisplayItemAndActivePortfolio = async (title, list) => {
     setActivatePortfolio(title);
-    setDisplayPortfolio(list);
+    await setDisplayPortfolio(list);
   };
 
-  const showAllPortfolio = () => {
+  const showAllPortfolio = async () => {
     setActivatePortfolio("All Work");
     const getAllPortfolioList = portfolioList.flatMap(
       (portfolio) => portfolio.list
@@ -94,7 +103,21 @@ const Portfolio = () => {
       ...item,
       id: index + 1,
     }));
-    setDisplayPortfolio(concatingAllAray);
+    await setDisplayPortfolio(concatingAllAray);
+  };
+
+  const calclatorHowManyItem = () => {
+    const vw = window.innerWidth;
+    if (vw < 768) {
+      console.log(1);
+      return 1;
+    } else if (vw > 768 && vw < 992) {
+      console.log(2);
+      return 2;
+    } else {
+      console.log(3);
+      return 3;
+    }
   };
 
   return (
@@ -103,7 +126,7 @@ const Portfolio = () => {
         title={"portfolio"}
         caption={"Check in Our Latest Works"}
       />
-      <ul className="portfolio_btns container mt5 dac g3">
+      <ul className="portfolio_btns container mt5 djac g3 fw">
         <li
           className={`portfolio_btn plr3 ptb1-2 br10 bnone tshor cp ${
             activatePortfolio === "All Work" ? "portfolio_btn__activate" : ""
@@ -132,15 +155,38 @@ const Portfolio = () => {
         ))}
       </ul>
       <div className="container mt5">
-        <div className="row ">
+        <div className="row">
           <div className="cl-12">
-            {displayPortfolio.map((portfolio) => (
-              <img
-                src={`/home/portfolio/${portfolio.image}`}
-                alt={portfolio.link}
-                style={{ width: 300, height: 600 }}
-              />
-            ))}
+            <Swiper
+              effect={"coverflow"}
+              slidesPerView={
+                window.innerWidth < 768
+                  ? 1
+                  : window.innerWidth > 768 && window.innerWidth < 992
+                  ? 2
+                  : 3
+              }
+              spaceBetween={30} // اضافه کردن فاصله 30 پیکسل بین اسلایدها
+              coverflowEffect={{
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+              }}
+              className="mySwiper"
+            >
+              {displayPortfolio.map((portfolio) => (
+                <SwiperSlide key={portfolio.id}>
+                  <img
+                    src={`/home/portfolio/${portfolio.image}`}
+                    alt={portfolio.link}
+                    style={{ width: 410, height: 600 }}
+                  />
+                </SwiperSlide>
+              ))}
+              <div className="custom-pagination"></div>
+            </Swiper>
           </div>
         </div>
       </div>

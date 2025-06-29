@@ -20,6 +20,10 @@ export default function App() {
     }
   };
 
+  useEffect(() => {
+    handleUserTheme()
+  } , [localStorage.getItem("theme")])
+ 
   return (
     <>
       <Header />
