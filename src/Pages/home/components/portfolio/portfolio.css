@@ -1,0 +1,5 @@
+.portfolio_btn__activate{
+    background-color: var(--main);
+    box-shadow: 0 0 4rem rgba(96,233,255,27%);
+    color: #fff;
+}
