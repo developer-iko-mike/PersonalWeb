@@ -1,0 +1,21 @@
+.Pricing_Standard__btnBg {
+  background-color: #803afb;
+}
+.Pricing_Premium__btnBg {
+  background-color: #f5276c;
+}
+.planTiTle{
+    font-size: 3.2rem;
+}
+.planPrice {
+    font-size: 2.6rem;
+}
+.plan_shadow__blue{
+  box-shadow: 0 0 5rem rgba(96, 233, 255, 27%);
+}
+.Pricing_basic__btnBg{
+  background-color: #FF6331;
+}
+.pricing_item {
+  row-gap: 2.7rem;
+}

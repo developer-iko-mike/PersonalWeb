@@ -106,20 +106,6 @@ const Portfolio = () => {
     await setDisplayPortfolio(concatingAllAray);
   };
 
-  const calclatorHowManyItem = () => {
-    const vw = window.innerWidth;
-    if (vw < 768) {
-      console.log(1);
-      return 1;
-    } else if (vw > 768 && vw < 992) {
-      console.log(2);
-      return 2;
-    } else {
-      console.log(3);
-      return 3;
-    }
-  };
-
   return (
     <section id="portfolio" style={{ marginBottom: 200 }}>
       <SectionHeading
@@ -166,7 +152,7 @@ const Portfolio = () => {
                   ? 2
                   : 3
               }
-              spaceBetween={30} // اضافه کردن فاصله 30 پیکسل بین اسلایدها
+              spaceBetween={30}
               coverflowEffect={{
                 rotate: 50,
                 stretch: 0,

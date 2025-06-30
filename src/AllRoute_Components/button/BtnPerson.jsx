@@ -37,7 +37,7 @@ const Button = ({
             boxShadow: `0 1.5rem 4rem ${makeShadowColorWithClassBg}`,
           }}
         >
-          {title}
+          {title || children}
         </Link>
       ) : (
         <button
