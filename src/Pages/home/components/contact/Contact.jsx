@@ -65,7 +65,14 @@ const Contact = () => {
             value={massage}
             onChange={handleChange}
           ></textarea>
-          <button className="b btn1" disabled={name.length < 3 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)}>asdasd</button>
+          <button
+            className="b btn1"
+            disabled={
+              name.length < 3 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+            }
+          >
+            asdasd
+          </button>
         </form>
       </div>
     </section>

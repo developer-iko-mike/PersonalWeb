@@ -1,7 +1,7 @@
-.portfolio_btn__activate{
-    background-color: var(--main);
-    box-shadow: 0 0 4rem rgba(96,233,255,27%);
-    color: #fff;
+.portfolio_btn__activate {
+  background-color: var(--main);
+  box-shadow: 0 0 4rem rgba(96, 233, 255, 27%);
+  color: #fff;
 }
 
 /* Swiper Styles */
@@ -12,12 +12,15 @@
 }
 
 .swiper-slide {
+  display: flex; /* اضافه شده */
+  flex-direction: column; /* اضافه شده */
   text-align: center;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  aspect-ratio: 41/60; /* نسبت ابعاد ثابت (410/600) */
 }
 
 .swiper-slide:hover {
@@ -27,8 +30,9 @@
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: auto;
-  /* object-fit: cover; */
+  height: 100%;
+  /* object-fit: cover;  */
+  flex-grow: 1; /* اضافه شده */
 }
 
 /* Pagination Styles */
@@ -48,6 +52,22 @@
   background: #007aff;
 }
 
+.swiper-pagination-bullets {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--section);
+  padding: 0.6rem;
+  border: 3px solid lightgray;
+  transition: all 0.2s ease-in-out;
+}
+.swiper-pagination-bullet-active {
+  border-color: var(--main) !important;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .swiper {
@@ -64,4 +84,9 @@
 
 .portfolio_btn {
   padding: 1.25rem 2.15rem;
+}
+@media (max-width: 576px) {
+.swiper-slide img {
+  object-fit: cover; 
+}
 }

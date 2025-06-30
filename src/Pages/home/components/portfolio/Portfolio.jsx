@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SectionHeading from "../../../../AllRoute_Components/sectionHeading/SectionHeading";
-import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Pagination } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "./portfolio.css";
-import "./portfolio.css";
 
 const Portfolio = () => {
-  const [portfolioList, setPortfolioList] = useState([
+  const [portfolioList] = useState([
     {
       id: 1,
       title: "Web UI",
@@ -89,12 +88,12 @@ const Portfolio = () => {
   ]);
   const [activatePortfolio, setActivatePortfolio] = useState("Web UI");
 
-  const handleChangeDisplayItemAndActivePortfolio = async (title, list) => {
+  const handleChangeDisplayItemAndActivePortfolio = (title, list) => {
     setActivatePortfolio(title);
-    await setDisplayPortfolio(list);
+    setDisplayPortfolio(list);
   };
 
-  const showAllPortfolio = async () => {
+  const showAllPortfolio = () => {
     setActivatePortfolio("All Work");
     const getAllPortfolioList = portfolioList.flatMap(
       (portfolio) => portfolio.list
@@ -103,7 +102,7 @@ const Portfolio = () => {
       ...item,
       id: index + 1,
     }));
-    await setDisplayPortfolio(concatingAllAray);
+    setDisplayPortfolio(concatingAllAray);
   };
 
   return (
@@ -144,6 +143,8 @@ const Portfolio = () => {
         <div className="row">
           <div className="cl-12">
             <Swiper
+              // modules={[EffectCoverflow, Pagination]}
+              modules={[Pagination]}
               effect={"coverflow"}
               slidesPerView={
                 window.innerWidth < 768
@@ -160,14 +161,17 @@ const Portfolio = () => {
                 modifier: 1,
                 slideShadows: true,
               }}
+              pagination={{ 
+                clickable: true,
+                el: ".custom-pagination",
+              }}
               className="mySwiper"
             >
               {displayPortfolio.map((portfolio) => (
-                <SwiperSlide key={portfolio.id}>
+                <SwiperSlide key={portfolio.id} className="wmax">
                   <img
                     src={`/home/portfolio/${portfolio.image}`}
                     alt={portfolio.link}
-                    style={{ width: 410, height: 600 }}
                   />
                 </SwiperSlide>
               ))}

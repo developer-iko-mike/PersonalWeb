@@ -9,8 +9,11 @@ import ChangeThemeBTN from "../AllRoute_Components/changeThemeBTN/ChangeThemeBTN
 export default function App() {
   let router = useRoutes(routes);
 
+  const [theme , setTheme] = useState("")
+
   const handleUserTheme = () => {
     const localtheme = localStorage.getItem("theme");
+    setTheme(localtheme)
     if (!localtheme || localtheme === "light") {
       document.body.classList.add("darkTheme");
       localStorage.setItem("theme", "dark");
@@ -22,14 +25,14 @@ export default function App() {
 
   useEffect(() => {
     handleUserTheme()
-  } , [localStorage.getItem("theme")])
+  } , [])
  
   return (
     <>
       <Header />
-      <ChangeThemeBTN onThemeChange={handleUserTheme} />
       {router}
-      <Footer />
+      <ChangeThemeBTN onThemeChange={handleUserTheme} />
+      <Footer toggleTheme={handleUserTheme} theme={theme} />
     </>
   );
 }
