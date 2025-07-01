@@ -8,13 +8,13 @@ const Service = ({ title, icon, caption, classNames = "cl-4" }) => {
   useEffect(() => {
     if (classNames.includes("service_webDesign")) {
       setSvgFill("#803AFB");
-      setBoxShadowColor("#803AFB");
+      setBoxShadowColor("rgba(118,13,255,35%)");
     } else if (classNames.includes("service_interfaceDesign")) {
       setSvgFill("#FFBB01");
-      setBoxShadowColor("#FFBB01");
+      setBoxShadowColor("rgba(255,197,12,35%)");
     } else if (classNames.includes("service_webDevelopment")) {
       setSvgFill("#F5276C");
-      setBoxShadowColor("#F5276C");
+      setBoxShadowColor("rgba(236,64,122,35%)");
     } else if (classNames.includes("service_uXDesign")) {
       setSvgFill("#FF5823");
       setBoxShadowColor("rgba(255,99,49,35%)");

@@ -28,8 +28,8 @@ const SectionHeading = ({
   };
 
   return (
-    <div className={`cl-12 dfcjac ${classNames}`}>
-      <h3 className="sectionHeader_title cmain fw700">{title}</h3>
+    <div className={`cl-12 dfcjac mb5 ${classNames}`}>
+      <h3 className="sectionHeader_title cmain fw900">{title}</h3>
       <p className={`sectionHeader_caption`}>{caption}</p>
       <div className="sectionHeader_line djac pr br2 bgmain" ref={nodeRef}>
         {draggable ? (

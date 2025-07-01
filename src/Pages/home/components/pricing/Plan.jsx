@@ -38,7 +38,7 @@ const Plan = ({
         <div className="planContent w100 dfc aic ptb3 bgbody">
           <ul className="planList dfc g2 mb2-5">
             {defaultOption.map((item, index) => (
-              <li className="planList_item dac g1" key={index}>
+              <li className="planList_item dac g1-5" key={index}>
                 {typeOption.includes(item) ? <TickSVG /> : <CloseSVG />}
                 <span>{item}</span>
               </li>

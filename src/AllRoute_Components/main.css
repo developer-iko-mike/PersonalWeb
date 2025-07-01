@@ -52,7 +52,6 @@
 .darkTheme {
   --body: #161d26; /* app-bg-color */
   --section: #1f2935; /* section-bg-color */
-  /* --text: #fff; */
   --text: #95a5c6;
 }
 
@@ -74,24 +73,25 @@ body {
   line-height: 1.5;
   scroll-behavior: smooth !important;
   overflow-x: hidden;
+  outline: none;
 }
 
 a {
   color: var(--text);
 }
 
-.changeTheme_fix__btn{
-  padding: .7rem;
+.changeTheme_fix__btn {
+  padding: 0.7rem;
   background-color: #fff;
   box-shadow: 0 0 4rem rgba(50, 228, 255, 0.27);
 }
 
-.darkTheme .changeTheme_fix__btn{
+.darkTheme .changeTheme_fix__btn {
   background-color: var(--body);
 }
 
-.changeTheme_fix__btn svg{
-fill: var(--text);
+.changeTheme_fix__btn svg {
+  fill: var(--text);
 }
 
 /*****************************
@@ -156,9 +156,9 @@ fill: var(--text);
 
 .rotatedSection {
   box-shadow: 0 0 6rem rgb(19 182 255 / 24%);
-  margin-top: 20rem;
-  margin-bottom: 10rem;
-  padding: 3rem 0 15rem 0;
+  margin-top: 12rem;
+  margin-bottom: 8rem;
+  padding: 3rem 0 12rem 0;
   transform: skewY(-6deg);
   background-color: var(--section);
 }
@@ -170,6 +170,12 @@ fill: var(--text);
   box-shadow: none;
 }
 
+/* -------- padding ---------- */
+
+.ptb7 {
+  padding: 7rem 0;
+}
+
 /***************************
 ----------------------------
 ======== Before style ========
@@ -177,7 +183,7 @@ fill: var(--text);
 ***************************/
 
 .nav__toggle___line::before,
-.nav__toggle___line::after ,
+.nav__toggle___line::after,
 .about_content__listItem::before,
 .resume_list::before,
 .resume_list__item::before,
@@ -198,7 +204,11 @@ fill: var(--text);
     width: 1250px;
   }
 }
-@media screen and (max-width: 1200px) {}
-@media screen and (max-width: 992px)  {}
-@media screen and (max-width: 768px)  {}
-@media screen and (max-width: 576px)  {}
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 992px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 576px) {
+}

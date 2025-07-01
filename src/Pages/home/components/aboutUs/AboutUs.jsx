@@ -14,11 +14,11 @@ const AboutUs = () => {
 
   return (
     <section id="about-us">
-      <div className="container mb15 mt15">
+      <div className="container">
         <SectionHeading
           title={"about us"}
           caption={"why choose Me ?"}
-          classNames="ptb5"
+          classNames="mt6"
         />
         <div className="about_warraper rw bgsection djsb">
           <div className="about_cover cl-12 cl-lg-6">

@@ -21,6 +21,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   aspect-ratio: 41/60; /* نسبت ابعاد ثابت (410/600) */
+  width: 38.66rem;
+  height: 49.12rem;
 }
 
 .swiper-slide:hover {
@@ -32,6 +34,11 @@
   width: 100%;
   height: 100%;
   flex-grow: 1; /* اضافه شده */
+  object-fit: fill;
+}
+
+.swiper-wrapper {
+  height: auto;
 }
 
 /* Pagination Styles */
@@ -60,24 +67,13 @@
 .swiper-pagination-bullet {
   background-color: var(--section);
   padding: 0.6rem;
-  border: 3px solid #BFBEBE;
+  border: 3px solid #bfbebe;
   transition: all 0.2s ease-in-out;
 }
 .swiper-pagination-bullet-active {
   border-color: var(--main) !important;
 }
 
-
-/* Responsive */
-@media (max-width: 768px) {
-  .swiper {
-    padding: 10px 0 40px;
-  }
-  
-  .swiper-slide {
-    margin-bottom: 15px;
-  }
-}
 .portfolio_btns {
   gap: 1.5rem;
 }
@@ -85,8 +81,23 @@
 .portfolio_btn {
   padding: 1.25rem 2.15rem;
 }
-@media (max-width: 576px) {
-.swiper-slide img {
-  object-fit: cover; 
+
+.custom-pagination {
+  flex-wrap: wrap;
+  row-gap: 1rem;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .swiper {
+    padding: 10px 0 40px;
+  }
+
+  .swiper-slide {
+    margin-bottom: 15px;
+  }
+  .swiper-slide img {
+    object-fit: contain;
+    background-color: var(--body);
+  }
 }

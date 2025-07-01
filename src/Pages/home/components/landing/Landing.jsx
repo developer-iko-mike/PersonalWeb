@@ -12,10 +12,10 @@ const Landing = () => {
           <div className="cl-6 col-md-12">
             <div className="home_content">
               <div className="home_name dac g1 mb07">
-                <h3 className="home__username fs2-5 ttnone cmain">
+                <h3 className="home__username fwbold ttnone cmain">
                   Hello, IM
                 </h3>
-                <h3 className="home__username fs2-5 ttnone cmainOrange">
+                <h3 className="home__username fwbold ttnone cmainOrange">
                   Mohammad iKO.
                 </h3>
               </div>

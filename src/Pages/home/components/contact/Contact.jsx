@@ -14,6 +14,7 @@ const Contact = () => {
     isValid: false,
   });
   const [loadingMassage, setLoadingMassage] = useState("");
+  const [resMassage, setResMassage] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -25,16 +26,23 @@ const Contact = () => {
     e.preventDefault();
     console.log(formState);
 
+    // send massage
+
     setLoading(true);
-    // send api here
-    setLoadingMassage("send massage is successfully !");
-    const timeout = setTimeout(() => {
+    setLoadingMassage("just a second ...");
+
+    const massageTimeout = setTimeout(() => {
       setLoading(false);
-    }, 3000);
+      setLoadingMassage("");
+      setResMassage("send massage is successfully");
+      disPatch({ type: "RESET" });
+    }, 1500);
 
-    disPatch({ type: "RESET" });
+    const finllyTimeout = setTimeout(() => {
+      setResMassage("");
+    }, 5000);
 
-    return () => clearTimeout(timeout);
+    return () => clearTimeout(massageTimeout, finllyTimeout);
   };
 
   const { name, email, subject, estimatedBudget, massage } = formState;
@@ -50,7 +58,7 @@ const Contact = () => {
             className="contect_form dfc aic g1-5 ptb4-5 plr4-5 bgsection bgl-gren pa r0"
             onSubmit={sendMassageToAdmin}
           >
-            <h4 className="contect_form__title fw700 cmain tl w100">
+            <h4 className="contect_form__title fw700 cmain tl w100 mt1-5">
               Get in Touch
             </h4>
             <input
@@ -94,7 +102,7 @@ const Contact = () => {
               onChange={handleChange}
             ></textarea>
             <button
-              className="contect_form__submit w100 ptb1-5 plr1-5 bgmain br5 bnone onone fw600 cp cfff w100 tt"
+              className="contect_form__submit w100 ptb1-5 plr1-5 bgmain br5 bnone onone fw600 cp cfff w100 tt tshor"
               disabled={
                 name.length < 3 ||
                 massage.length < 5 ||
@@ -102,12 +110,18 @@ const Contact = () => {
               }
               type="submit"
             >
-              {loading ? "just a second ..." : "submit"}
+              {loading && loadingMassage ? "just a second ..." : "submit"}
             </button>
 
-            {loading && (
-              <p className={`fw700 ${loadingMassage ? "cd-grn" : "cred"}`}>
-                {loadingMassage || "have error in send massage"}
+            {resMassage && (
+              <p
+                className={`fw700 ${
+                  resMassage === "send massage is successfully"
+                    ? "cd-grn"
+                    : "cred"
+                }`}
+              >
+                {resMassage}
               </p>
             )}
           </form>

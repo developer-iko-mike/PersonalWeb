@@ -2,6 +2,7 @@
   box-shadow: 0 0 4rem rgb(96 233 255 / 27%);
   position: relative;
   z-index: 20;
+  min-width: 30rem;
 }
 
 .resume_list::before {
@@ -38,8 +39,8 @@
 .resume_list__item___activate::before {
   width: 100%;
 }
-.pt7 {
-  padding-top: 7rem;
+.pt5 {
+  padding-top: 5rem;
 }
 .resume_list__item___title {
   font-size: 1.8rem;
@@ -62,7 +63,7 @@
 }
 
 .resume_detailItem__headTiTle {
-  color: var(--mainOrange);
+  color: #ff5823;
   font-size: 1.8rem;
   /* margin-bottom: 1.5rem; */
 }
@@ -145,8 +146,12 @@
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .resume_detail__wrapper {
+    padding-left: 12rem;
+  }
+}
 @media screen and (max-width: 992px) {
-
   .resume_detail.animate {
     animation: fadeInUp 0.32s ease-out forwards;
   }
@@ -160,6 +165,7 @@
 
   .resume_list {
     display: none;
+    min-width: 30rem;
   }
 
   .resume_detail__wrapper {

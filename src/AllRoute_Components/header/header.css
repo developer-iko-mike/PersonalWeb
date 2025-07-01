@@ -1,10 +1,10 @@
 header {
   z-index: 101;
-  box-shadow: 0 0.5rem 4rem rgb(4, 195, 65, 0.15);
+  box-shadow: 0 .5rem 4rem rgba(4, 195, 255, 16%);
 }
 .headerLogo {
   font-size: 6rem;
-
+  font-weight: 900;
   font-family: cursive !important;
   /* text-shadow: 1px 3px 2rem var(--main); */
 }

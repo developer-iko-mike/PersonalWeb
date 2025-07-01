@@ -12,7 +12,7 @@ const ChangeThemeBTN = ({ onThemeChange, theme }) => {
             className="b bsbd br10 changeTheme_fix__btn djac"
             onClick={onThemeChange}
           >
-            {theme === "light" ? <LightModeSVG /> : <DarkModeSVG />}
+            {theme === "light" ? <DarkModeSVG /> : <LightModeSVG />}
           </button>
         </div>
   );

@@ -1,16 +1,21 @@
 .contect_form__ipt,
 .contect_form__txa {
-  box-shadow: 0 0 5rem rgba(96, 233, 255, 27%);
+  box-shadow: 0 0 5rem rgba(96, 233, 255, 16%);
   color: var(--text);
   font-size: 1.6rem;
   text-transform: capitalize;
 }
 
+.contect_form__ipt::placeholder,
+.contect_form__txa::placeholder{
+color: var(--text);
+}
+
 /* contact.css */
 .contect_warraper {
   background-image: url(./Components/map.jpg);
-  height: 75rem;
-  padding: 6rem 0;
+  height: 78rem;
+  padding: 7rem 0;
 }
 
 .contect_form__title {
@@ -29,15 +34,23 @@
   font-size: 1.8rem;
 }
 
+.contect_form__submit:hover{
+  opacity: .8;
+}
+
 .contect_form {
   width: 55rem;
   box-shadow: 0 0 4rem rgba(19, 182, 255, 24%);
 }
 
-.contect_form button:disabled {
+.contect_form__submit:disabled {
   background-color: var(--red);
   cursor: not-allowed;
   animation: showHiddenShadow 1.5s ease-in-out 0.1s infinite;
+}
+
+.contect_form__submit:disabled:hover{
+opacity: 1;
 }
 
 @keyframes showHiddenShadow {
@@ -57,7 +70,7 @@
   height: 6rem;
   background-color: #ffffff8f;
   box-shadow: 0 0 4rem rgba(96, 233, 255, 27%);
-  top: 42%;
+  top: 46%;
   left: 30.5%;
 
   /* right in figma template */

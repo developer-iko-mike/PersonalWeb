@@ -63,8 +63,8 @@ const Services = () => {
 
   return (
     <section id="services">
-      <SectionHeading title={"services"} caption={"what we provide you ?"} />
-      <div className="container ptb5">
+      <SectionHeading title={"services"} caption={"what we provide you ?"} classNames="mt8" />
+      <div className="container">
         <div className="rw services__warraper cwhite">
           {serviceItem.map((item) => (
             <div key={item.id} className="cl-12 cl-sm-6 cl-lg-4">

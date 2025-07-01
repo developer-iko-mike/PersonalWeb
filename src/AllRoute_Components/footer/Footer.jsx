@@ -39,7 +39,7 @@ const Footer = ({ toggleTheme, theme }) => {
             className="footer_social__item br100 cp djac"
             onClick={toggleTheme}
           >
-            {theme === "light" ? <LightModeSVG /> : <DarkModeSVG />}
+            {theme === "light" ? <DarkModeSVG /> : <LightModeSVG />}
           </li>
           {socials.map((social) => (
             <li key={social.id}>

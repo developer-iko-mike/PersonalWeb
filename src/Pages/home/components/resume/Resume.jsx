@@ -178,13 +178,13 @@ const Resume = () => {
         <SectionHeading
           title={"resume"}
           caption={"my formal bio details"}
-          classNames="pr pt7"
+          classNames="pr pt5"
         />
         <div className="container">
-          <ul className="undisplay_resumeList dac g2 fw mt3">
+          <ul className="undisplay_resumeList djac g2 fw mt3">
             {resumeList.map((item) => (
               <li
-                className={`undisplay_resumeList__item plr3 ptb1-5 cwhite fw600 br10 aic g1-5 dnone cp ${
+                className={`undisplay_resumeList__item plr3 ptb1-5 cwhite fw600 br5 aic g1-5 dnone cp ${
                   activeListItem === item.title
                     ? "undisplay_resumeList__item___activate"
                     : ""
@@ -200,7 +200,7 @@ const Resume = () => {
             ))}
           </ul>
 
-          <div className="rw aic" style={{ paddingTop: 50 }}>
+          <div className="rw aic">
             <div className="cl-3">
               <ul className="resume_list bgbody dfc jcc g3-5 ptb5 plr1">
                 {resumeList.map((resume) => (

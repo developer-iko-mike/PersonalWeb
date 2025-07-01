@@ -47,7 +47,7 @@ const Pricing = () => {
   ]);
 
   return (
-    <section id="pricing" className="mb15 rotatedSection">
+    <section id="pricing" className="rotatedSection">
       <div className="unRotatedSection mt5">
         <SectionHeading
           title={"Pricing"}

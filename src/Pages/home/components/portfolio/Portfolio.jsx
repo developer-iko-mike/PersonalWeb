@@ -86,7 +86,7 @@ const Portfolio = () => {
     { id: 5, image: "app-ui/5.png", link: "www.github.com/" },
     { id: 6, image: "app-ui/6.png", link: "www.github.com/" },
   ]);
-  const [activatePortfolio, setActivatePortfolio] = useState("Web UI");
+  const [activatePortfolio, setActivatePortfolio] = useState("All Work");
 
   const handleChangeDisplayItemAndActivePortfolio = (title, list) => {
     setActivatePortfolio(title);
@@ -139,7 +139,7 @@ const Portfolio = () => {
           </li>
         ))}
       </ul>
-      <div className="container mt5">
+      <div className="container mt2">
         <div className="row">
           <div className="cl-12">
             <Swiper
