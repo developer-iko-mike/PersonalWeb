@@ -113,7 +113,7 @@ const Portfolio = () => {
       />
       <ul className="portfolio_btns container mt5 djac g3 fw">
         <li
-          className={`portfolio_btn plr3 ptb1-2 br10 bnone tshor cp ${
+          className={`portfolio_btn plr3 ptb1-2 br5 bnone tshor cp ${
             activatePortfolio === "All Work" ? "portfolio_btn__activate" : ""
           }`}
           onClick={showAllPortfolio}
@@ -122,7 +122,7 @@ const Portfolio = () => {
         </li>
         {portfolioList.map((portfolio) => (
           <li
-            className={`portfolio_btn plr3 ptb1-2 br10 bnone tshor cp ${
+            className={`portfolio_btn plr3 ptb1-2 br5 bnone tshor cp ${
               activatePortfolio === portfolio.title
                 ? "portfolio_btn__activate"
                 : ""

@@ -80,6 +80,20 @@ a {
   color: var(--text);
 }
 
+.changeTheme_fix__btn{
+  padding: .7rem;
+  background-color: #fff;
+  box-shadow: 0 0 4rem rgba(50, 228, 255, 0.27);
+}
+
+.darkTheme .changeTheme_fix__btn{
+  background-color: var(--body);
+}
+
+.changeTheme_fix__btn svg{
+fill: var(--text);
+}
+
 /*****************************
 ------------------------------
 ======= Helper classes =======

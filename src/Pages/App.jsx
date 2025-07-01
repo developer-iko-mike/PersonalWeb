@@ -31,7 +31,7 @@ export default function App() {
     <>
       <Header />
       {router}
-      <ChangeThemeBTN onThemeChange={handleUserTheme} />
+      <ChangeThemeBTN onThemeChange={handleUserTheme} theme={theme} />
       <Footer toggleTheme={handleUserTheme} theme={theme} />
     </>
   );

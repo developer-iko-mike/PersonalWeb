@@ -1,17 +1,21 @@
-import React, { useContext } from "react";
-// import ThemeContext from "../themeContext";
+import React, { useEffect, useState } from "react";
+import LightModeSVG from "../footer/SVGs/LightModeSVG";
+import DarkModeSVG from "../footer/SVGs/DarkModeSVG";
 
-export default function ChangeThemeBTN({onThemeChange}) {
+const ChangeThemeBTN = ({ onThemeChange, theme }) => {
 
-  // const themeContext = useContext(ThemeContext)
-
-  // console.log(themeContext);
+    const [scroll , setScroll] = useState(0)
 
   return (
-    <div className="pf b1-5 l1-5 z100">
-      <button className="b btn1 fs2 bsbd br10" onClick={onThemeChange}>
-        change theme
-      </button>
-    </div>
+        <div className="pf b1-5 l1-5 z100">
+          <button
+            className="b bsbd br10 changeTheme_fix__btn djac"
+            onClick={onThemeChange}
+          >
+            {theme === "light" ? <LightModeSVG /> : <DarkModeSVG />}
+          </button>
+        </div>
   );
-}
+};
+
+export default ChangeThemeBTN;

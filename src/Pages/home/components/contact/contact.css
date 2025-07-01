@@ -1,0 +1,90 @@
+.contect_form__ipt,
+.contect_form__txa {
+  box-shadow: 0 0 5rem rgba(96, 233, 255, 27%);
+  color: var(--text);
+  font-size: 1.6rem;
+  text-transform: capitalize;
+}
+
+/* contact.css */
+.contect_warraper {
+  background-image: url(./Components/map.jpg);
+  height: 78rem;
+  padding: 5rem 0;
+}
+
+.contect_form__title {
+  font-size: 32px;
+}
+
+.contect_form__txa {
+  resize: vertical;
+  min-height: 15.8rem;
+  max-height: 22rem;
+  font-size: 1.6rem;
+  font-family: var(--fpoppins);
+}
+
+.contect_form__submit {
+  font-size: 1.8rem;
+}
+
+.contect_form {
+  width: 55rem;
+  box-shadow: 0 0 4rem rgba(19, 182, 255, 24%);
+}
+
+.contect_form button:disabled {
+  background-color: var(--red);
+  cursor: not-allowed;
+  animation: showHiddenShadow 1s ease-in-out 0.05s infinite;
+}
+
+@keyframes showHiddenShadow {
+    0% {
+  box-shadow: 0 0 4rem -2rem var(--d-red);
+    }
+    50% {
+        box-shadow: 0 0 4rem -1.2rem var(--d-red);
+    }
+    100% {
+  box-shadow: 0 0 4rem -2rem var(--d-red);
+    }
+}
+
+.contect_myLocation {
+  width: 6rem;
+  height: 6rem;
+  background-color: #ffffff33;
+  box-shadow: 0 0 4rem rgba(96, 233, 255, 27%);
+  top: 46%;
+  left: 29%;
+}
+
+.contect_form__submit{
+cursor: pointer;
+}
+
+@media screen and (max-width: 992px)  {
+    .contect_myLocation{
+        display: none;
+    }
+
+    .contect_form {
+        left: 0;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 576px)  {
+
+    .contect_warraper{
+        height: 72rem;
+    }
+
+    .contect_form {
+    width: 95%;
+    border-radius: 1.5rem;
+    padding: 3.5rem;
+    top: 0;
+    }
+}
