@@ -10,14 +10,15 @@ import TelegramSVG from "./SVGs/TelegramSVG";
 import InstagramSVG from "./SVGs/InstagramSVG";
 import TwitterSVG from "./SVGs/TwitterSVG";
 import "./footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = ({ toggleTheme, theme }) => {
   const [socials, setSocials] = useState([
-    { id: 1, icon: <FacebookSVG /> },
-    { id: 2, icon: <BehanceSVG /> },
-    { id: 3, icon: <DribbbleSVG /> },
-    { id: 4, icon: <PinterestSVG /> },
-    { id: 5, icon: <SkypeSVG /> },
+    { id: 1, icon: <FacebookSVG /> , link: "/"},
+    { id: 2, icon: <BehanceSVG /> , link: "/"},
+    { id: 3, icon: <DribbbleSVG /> , link: "/"},
+    { id: 4, icon: <PinterestSVG /> , link: "/"},
+    { id: 5, icon: <SkypeSVG /> , link: "/"},
   ]);
   // const [socials, setSocials] = useState([
   //   { id: 1, icon: <FacebookSVG /> },
@@ -41,8 +42,9 @@ const Footer = ({ toggleTheme, theme }) => {
             {theme === "light" ? <LightModeSVG /> : <DarkModeSVG />}
           </li>
           {socials.map((social) => (
-            <li className="footer_social__item br100 cp djac" key={social.id}>
-              {social.icon}
+            <li key={social.id}>
+              <Link to={social.link} className="footer_social__item br100 djac">{social.icon}</Link>
+              
             </li>
           ))}
         </ul>

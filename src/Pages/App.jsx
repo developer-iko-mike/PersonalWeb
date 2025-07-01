@@ -9,24 +9,21 @@ import ChangeThemeBTN from "../AllRoute_Components/changeThemeBTN/ChangeThemeBTN
 export default function App() {
   let router = useRoutes(routes);
 
-  const [theme , setTheme] = useState("")
-
-  const handleUserTheme = () => {
-    const localtheme = localStorage.getItem("theme");
-    setTheme(localtheme)
-    if (!localtheme || localtheme === "light") {
-      document.body.classList.add("darkTheme");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.body.classList.remove("darkTheme");
-      localStorage.setItem("theme", "light");
-    }
-  };
+  const [theme, setTheme] = useState("");
 
   useEffect(() => {
-    handleUserTheme()
-  } , [])
- 
+    const localtheme = localStorage.getItem("theme") || "light";
+    setTheme(localtheme);
+    document.body.classList.toggle("darkTheme", localtheme === "dark");
+  }, []);
+
+  const handleUserTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.body.classList.toggle("darkTheme", newTheme === "dark");
+  };
+
   return (
     <>
       <Header />

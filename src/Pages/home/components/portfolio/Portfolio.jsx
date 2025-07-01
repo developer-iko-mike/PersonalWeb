@@ -161,7 +161,7 @@ const Portfolio = () => {
                 modifier: 1,
                 slideShadows: true,
               }}
-              pagination={{ 
+              pagination={{
                 clickable: true,
                 el: ".custom-pagination",
               }}

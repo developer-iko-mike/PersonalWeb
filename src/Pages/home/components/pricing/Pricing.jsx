@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import "./pricing.css";
 import SectionHeading from "../../../../AllRoute_Components/sectionHeading/SectionHeading";
 import Plan from "./Plan";
@@ -56,14 +56,16 @@ const Pricing = () => {
         <div className="container mt5">
           <div className="pricing_item rw">
             {planDetail.map((item) => (
-              <Plan
-                type={item.title}
-                price={item.price}
-                caption={item.caption}
-                typeOption={item.planOption}
-                btnClassNames={item.btnClassNames}
-                btnLink={item.btnLink}
-              />
+              <Fragment key={item.id}>
+                <Plan
+                  type={item.title}
+                  price={item.price}
+                  caption={item.caption}
+                  typeOption={item.planOption}
+                  btnClassNames={item.btnClassNames}
+                  btnLink={item.btnLink}
+                />
+              </Fragment>
             ))}
           </div>
         </div>

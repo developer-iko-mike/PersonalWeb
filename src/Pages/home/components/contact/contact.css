@@ -9,8 +9,8 @@
 /* contact.css */
 .contect_warraper {
   background-image: url(./Components/map.jpg);
-  height: 78rem;
-  padding: 5rem 0;
+  height: 75rem;
+  padding: 6rem 0;
 }
 
 .contect_form__title {
@@ -37,54 +37,61 @@
 .contect_form button:disabled {
   background-color: var(--red);
   cursor: not-allowed;
-  animation: showHiddenShadow 1s ease-in-out 0.05s infinite;
+  animation: showHiddenShadow 1.5s ease-in-out 0.1s infinite;
 }
 
 @keyframes showHiddenShadow {
-    0% {
-  box-shadow: 0 0 4rem -2rem var(--d-red);
-    }
-    50% {
-        box-shadow: 0 0 4rem -1.2rem var(--d-red);
-    }
-    100% {
-  box-shadow: 0 0 4rem -2rem var(--d-red);
-    }
+  0% {
+    box-shadow: 0 0 4rem -2rem var(--d-red);
+  }
+  50% {
+    box-shadow: 0 0 4rem -1.2rem var(--d-red);
+  }
+  100% {
+    box-shadow: 0 0 4rem -2rem var(--d-red);
+  }
 }
 
 .contect_myLocation {
   width: 6rem;
   height: 6rem;
-  background-color: #ffffff33;
+  background-color: #ffffff8f;
   box-shadow: 0 0 4rem rgba(96, 233, 255, 27%);
-  top: 46%;
-  left: 29%;
+  top: 42%;
+  left: 30.5%;
+
+  /* right in figma template */
+  /* top: 74%;
+    left: 38.5%; */
 }
 
-.contect_form__submit{
-cursor: pointer;
+.contect_form__submit {
+  cursor: pointer;
 }
 
-@media screen and (max-width: 992px)  {
-    .contect_myLocation{
-        display: none;
-    }
-
-    .contect_form {
-        left: 0;
-        margin: 0 auto;
-    }
+.contect_myLocation svg {
+  width: 2rem;
 }
-@media screen and (max-width: 576px)  {
 
-    .contect_warraper{
-        height: 72rem;
-    }
+@media screen and (max-width: 992px) {
+  .contect_myLocation {
+    display: none;
+  }
 
-    .contect_form {
+  .contect_form {
+    left: 0;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 576px) {
+  .contect_warraper {
+    height: 72rem;
+  }
+
+  .contect_form {
     width: 95%;
     border-radius: 1.5rem;
     padding: 3.5rem;
     top: 0;
-    }
+  }
 }

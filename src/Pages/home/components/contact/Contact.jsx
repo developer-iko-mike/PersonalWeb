@@ -13,10 +13,28 @@ const Contact = () => {
     massage: "",
     isValid: false,
   });
+  const [loadingMassage, setLoadingMassage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     disPatch({ type: "CHANGE", field: name, value });
+  };
+
+  const sendMassageToAdmin = (e) => {
+    e.preventDefault();
+    console.log(formState);
+
+    setLoading(true);
+    // send api here
+    setLoadingMassage("send massage is successfully !");
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    disPatch({ type: "RESET" });
+
+    return () => clearTimeout(timeout);
   };
 
   const { name, email, subject, estimatedBudget, massage } = formState;
@@ -28,7 +46,10 @@ const Contact = () => {
           <MapSVG />
         </div>
         <div className="container">
-          <form className="contect_form dfc aic g1-5 ptb4-5 plr4-5 bgsection bgl-gren pa r0 t5" onSubmit={() => disPatch({type: "RESET"})}>
+          <form
+            className="contect_form dfc aic g1-5 ptb4-5 plr4-5 bgsection bgl-gren pa r0"
+            onSubmit={sendMassageToAdmin}
+          >
             <h4 className="contect_form__title fw700 cmain tl w100">
               Get in Touch
             </h4>
@@ -81,8 +102,14 @@ const Contact = () => {
               }
               type="submit"
             >
-              submit
+              {loading ? "just a second ..." : "submit"}
             </button>
+
+            {loading && (
+              <p className={`fw700 ${loadingMassage ? "cd-grn" : "cred"}`}>
+                {loadingMassage || "have error in send massage"}
+              </p>
+            )}
           </form>
         </div>
       </div>

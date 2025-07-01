@@ -10,10 +10,10 @@ const CloseSVG = () => {
       width="20px"
     >
       <path
-        class="icon"
+        className="icon"
         d="M3.25,3.25l8.5,8.5M11.75,3.25l-8.5,8.5"
         strokeWidth={1.25}
-        stroke="#000"
+        stroke="var(--text)"
       />
     </svg>
   );
