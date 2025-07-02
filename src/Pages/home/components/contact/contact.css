@@ -7,8 +7,8 @@
 }
 
 .contect_form__ipt::placeholder,
-.contect_form__txa::placeholder{
-color: var(--text);
+.contect_form__txa::placeholder {
+  color: var(--text);
 }
 
 /* contact.css */
@@ -34,8 +34,8 @@ color: var(--text);
   font-size: 1.8rem;
 }
 
-.contect_form__submit:hover{
-  opacity: .8;
+.contect_form__submit:hover {
+  opacity: 0.8;
 }
 
 .contect_form {
@@ -49,8 +49,8 @@ color: var(--text);
   animation: showHiddenShadow 1.5s ease-in-out 0.1s infinite;
 }
 
-.contect_form__submit:disabled:hover{
-opacity: 1;
+.contect_form__submit:disabled:hover {
+  opacity: 1;
 }
 
 @keyframes showHiddenShadow {
@@ -106,5 +106,9 @@ opacity: 1;
     border-radius: 1.5rem;
     padding: 3.5rem;
     top: 0;
+  }
+
+  .contect_form__txa {
+    max-height: 17.3rem;
   }
 }

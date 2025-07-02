@@ -1,6 +1,6 @@
 header {
   z-index: 101;
-  box-shadow: 0 .5rem 4rem rgba(4, 195, 255, 16%);
+  box-shadow: 0 0.5rem 4rem rgba(4, 195, 255, 16%);
 }
 .headerLogo {
   font-size: 6rem;
@@ -45,7 +45,7 @@ header {
 }
 
 @media screen and (max-width: 1200px) {
-    .headerLogo {
+  .headerLogo {
     font-size: 3.5rem;
   }
 }
@@ -73,7 +73,6 @@ header {
     justify-content: center;
     gap: 1.5rem;
     z-index: 100;
-
     height: 0;
     overflow: hidden;
     padding: 0rem;
@@ -102,5 +101,14 @@ header {
     z-index: -1;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  section#home {
+    padding-bottom: 5rem;
+  }
+
+  .headerCover__activate {
+    z-index: 100;
+    opacity: 1;
   }
 }

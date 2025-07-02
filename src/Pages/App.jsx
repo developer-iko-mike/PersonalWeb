@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Header from "../AllRoute_Components/header/Header";
 import routes from "../AllRoute_Components/routes";
 import { useRoutes } from "react-router-dom";
-
 import Footer from "../AllRoute_Components/footer/Footer";
 import ChangeThemeBTN from "../AllRoute_Components/changeThemeBTN/ChangeThemeBTN";
 
@@ -27,9 +26,9 @@ export default function App() {
   return (
     <>
       <Header />
-      {router}
-      <ChangeThemeBTN onThemeChange={handleUserTheme} theme={theme} />
-      <Footer toggleTheme={handleUserTheme} theme={theme} />
+       {router}
+       <ChangeThemeBTN onThemeChange={handleUserTheme} theme={theme} />
+      <Footer/>
     </>
   );
 }

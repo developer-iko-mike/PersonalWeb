@@ -1,23 +1,25 @@
-.btnPerson{
-width: 18rem;
-height: 5.3rem;
-cursor: pointer;
-transition: all .15s ease-in;
-font-size: 1.5rem;
-font-weight: 700;
-border-radius: 5rem;
-border: none;
-color: #fff;
-text-transform: capitalize;
-
-display: flex;
-justify-content: center;
-align-items: center;
+.btnPerson {
+  width: 18rem;
+  height: 5.3rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 5rem;
+  border: none;
+  color: #fff;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.btnPerson:hover{
-    opacity: .75;
-    transform: scale(1.03);
+.btnPerson:hover {
+  opacity: 0.75;
+  transform: scale(1.03);
 }
 
-@media screen and (max-width: 768px) { .btnPerson{  width: 17rem;  } }
-.linkPerson{}
+@media screen and (max-width: 768px) {
+  .btnPerson {
+    width: 17rem;
+  }
+}

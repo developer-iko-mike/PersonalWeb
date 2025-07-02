@@ -1,4 +1,3 @@
-#services {}
 .services__warraper { row-gap: 2.6rem;}
 .service_webDesign { background-color: #8540ff; }
 .service_interfaceDesign { background-color: #FFC50C; }
@@ -9,7 +8,6 @@
 .service { padding: 7rem 3.5rem; }
 .service_title { font-size: 2.4rem; }
 .service_caption { max-width: 30rem; }
-.service_icon {}
 
 @media screen and (max-width: 1200px) {
 .service { padding: 5rem 2.5rem; }

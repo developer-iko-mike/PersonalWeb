@@ -1,21 +1,53 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [activeItem, setActiveItem] = useState("Home");
+  const [activeItem, setActiveItem] = useState("home");
   const [burgerList, setBurgerList] = useState(false);
-  const [headerItem, setHeaderItem] = useState([
-    { id: 1, title: "Home", scrollNum: 0 },
-    { id: 2, title: "About us", scrollNum: 1200 },
-    { id: 3, title: "services", scrollNum: 5000 },
-    { id: 4, title: "Resume", scrollNum: 5000 },
-    { id: 5, title: "portfolio", scrollNum: 5000 },
-    { id: 6, title: "pricing", scrollNum: 5000 },
-    { id: 7, title: "contact", scrollNum: 5000 },
+  const [headerItem] = useState([
+    { id: 1, title: "Home", sectionId: "home" },
+    { id: 2, title: "About us", sectionId: "about-us" },
+    { id: 3, title: "services", sectionId: "services" },
+    { id: 4, title: "Resume", sectionId: "resume" },
+    { id: 5, title: "portfolio", sectionId: "portfolio" },
+    { id: 6, title: "pricing", sectionId: "pricing" },
+    { id: 7, title: "contact", sectionId: "contact" },
   ]);
 
   const nav__toggle___iconElam = useRef();
+  const observerRef = useRef(null);
+
+  useEffect(() => {
+    // ایجاد Intersection Observer
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            console.log(entry.target.dataset.sectionTitle);
+            setActiveItem(entry.target.dataset.sectionTitle);
+          }
+        });
+      },
+      { threshold: 0.7 }
+    );
+
+    // ثبت سکشن‌ها برای مشاهده
+    headerItem.forEach((item) => {
+      const section = document.getElementById(item.sectionId);
+      if (section) {
+        section.dataset.sectionTitle = item.sectionId;
+        observerRef.current.observe(section);
+      }
+    });
+
+    return () => {
+      // پاک کردن observer هنگام آنمونت
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, [headerItem]);
 
   const handleOpenBurgerList = () => {
     nav__toggle___iconElam.current.classList.toggle(
@@ -24,9 +56,12 @@ const Header = () => {
     setBurgerList(!burgerList);
   };
 
-  const activeItemAndScrollToSection = (title, scrollFromHead) => {
-    setActiveItem(title);
-    window.scrollTo(0, scrollFromHead);
+  const scrollToSection = (sectionId) => {
+    setActiveItem(sectionId);
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -40,16 +75,14 @@ const Header = () => {
             >
               {headerItem.map((item) => (
                 <li
-                  onClick={() =>
-                    activeItemAndScrollToSection(item.title, item.scrollNum)
-                  }
+                  onClick={() => scrollToSection(item.sectionId)}
                   className={`navListItem`}
                   key={item.id}
                 >
                   <Link
-                    href={`/`}
+                    to={`#${item.sectionId}`}
                     className={`navListItemLink tshor dib c fpop fwMedium ctext ${
-                      activeItem === item.title
+                      activeItem === item.sectionId
                         ? "navListItemLink__active cmain"
                         : ""
                     }`}
@@ -69,7 +102,7 @@ const Header = () => {
           </nav>
         </div>
       </header>
-      <div className={`headerCover ${burgerList ? "z100 o1" : ""}`} />
+      <div className={`headerCover ${burgerList ? "headerCover__activate" : ""}`} />
     </>
   );
 };

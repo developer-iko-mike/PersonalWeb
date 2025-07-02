@@ -90,6 +90,10 @@ a {
   background-color: var(--body);
 }
 
+.darkTheme .resume_detailItem__headTiTle{
+  color: #f57f17;
+}
+
 .changeTheme_fix__btn svg {
   fill: var(--text);
 }
@@ -159,15 +163,11 @@ a {
   margin-top: 12rem;
   margin-bottom: 8rem;
   padding: 3rem 0 12rem 0;
-  transform: skewY(-6deg);
+  transform: translateZ(0) skewY(-6deg);
   background-color: var(--section);
 }
 .unRotatedSection {
-  transform: skewY(6deg);
-}
-
-.darkTheme .rotatedSection {
-  box-shadow: none;
+  transform: translateZ(0) skewY(6deg);
 }
 
 /* -------- padding ---------- */
@@ -178,7 +178,7 @@ a {
 
 /***************************
 ----------------------------
-======== Before style ========
+======== All in One ========
 ----------------------------
 ***************************/
 
@@ -193,6 +193,26 @@ a {
   position: absolute;
 }
 
+.darkTheme header,
+.darkTheme .home_photo,
+.darkTheme .about_warraper,
+.darkTheme .rotatedSection,
+.darkTheme .plan_shadow__blue{
+  box-shadow: none;
+}
+
+/**************************
+---------------------------
+======== bad codes ========
+---------------------------
+**************************/
+
+#about-us { scroll-margin-top: 150px; }
+#services { scroll-margin-top: 140px; }
+#portfolio { scroll-margin-top: 150px; }
+#resume { scroll-margin-top: 80px; }
+#contact { scroll-margin-top: 130px; }
+
 /***************************
 ----------------------------
 ======== Responsive ========
@@ -204,11 +224,9 @@ a {
     width: 1250px;
   }
 }
-@media screen and (max-width: 1200px) {
-}
-@media screen and (max-width: 992px) {
-}
-@media screen and (max-width: 768px) {
-}
+
 @media screen and (max-width: 576px) {
+  * {
+    cursor: none !important;
+  }
 }

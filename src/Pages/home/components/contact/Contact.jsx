@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import "./contact.css";
 import SectionHeading from "../../../../AllRoute_Components/sectionHeading/SectionHeading";
 import formReducer from "./Components/formReducer";
@@ -34,7 +34,7 @@ const Contact = () => {
     const massageTimeout = setTimeout(() => {
       setLoading(false);
       setLoadingMassage("");
-      setResMassage("send massage is successfully");
+      setResMassage("send massage with successfully");
       disPatch({ type: "RESET" });
     }, 1500);
 
@@ -45,7 +45,8 @@ const Contact = () => {
     return () => clearTimeout(massageTimeout, finllyTimeout);
   };
 
-  const { name, email, subject, estimatedBudget, massage } = formState;
+  const { name, email, subject, estimatedBudget, massage , isValid } = formState;
+  
   return (
     <section id="contact" className="pr">
       <SectionHeading title="contact us" caption="Let's Keep In Touch" />
@@ -103,11 +104,7 @@ const Contact = () => {
             ></textarea>
             <button
               className="contect_form__submit w100 ptb1-5 plr1-5 bgmain br5 bnone onone fw600 cp cfff w100 tt tshor"
-              disabled={
-                name.length < 3 ||
-                massage.length < 5 ||
-                !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-              }
+              disabled={!isValid}
               type="submit"
             >
               {loading && loadingMassage ? "just a second ..." : "submit"}
@@ -116,7 +113,7 @@ const Contact = () => {
             {resMassage && (
               <p
                 className={`fw700 ${
-                  resMassage === "send massage is successfully"
+                  resMassage === "send massage with successfully"
                     ? "cd-grn"
                     : "cred"
                 }`}

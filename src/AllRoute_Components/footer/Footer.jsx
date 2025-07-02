@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import FacebookSVG from "./SVGs/FacebookSVG";
 import BehanceSVG from "./SVGs/BehanceSVG";
 import DribbbleSVG from "./SVGs/DribbbleSVG";
@@ -10,9 +11,8 @@ import TelegramSVG from "./SVGs/TelegramSVG";
 import InstagramSVG from "./SVGs/InstagramSVG";
 import TwitterSVG from "./SVGs/TwitterSVG";
 import "./footer.css";
-import { Link } from "react-router-dom";
 
-const Footer = ({ toggleTheme, theme }) => {
+const Footer = () => {
   const [socials, setSocials] = useState([
     { id: 1, icon: <FacebookSVG /> , link: "/"},
     { id: 2, icon: <BehanceSVG /> , link: "/"},
@@ -35,12 +35,6 @@ const Footer = ({ toggleTheme, theme }) => {
           © 2025 createuiux. All rights reserved.
         </p>
         <ul className="footer_social dac g1">
-          <li
-            className="footer_social__item br100 cp djac"
-            onClick={toggleTheme}
-          >
-            {theme === "light" ? <DarkModeSVG /> : <LightModeSVG />}
-          </li>
           {socials.map((social) => (
             <li key={social.id}>
               <Link to={social.link} className="footer_social__item br100 djac">{social.icon}</Link>
