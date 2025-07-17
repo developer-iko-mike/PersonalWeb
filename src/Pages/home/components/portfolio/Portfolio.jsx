@@ -170,7 +170,7 @@ const Portfolio = () => {
               {displayPortfolio.map((portfolio) => (
                 <SwiperSlide key={portfolio.id} className="wmax">
                   <img
-                    src={`/home/portfolio/${portfolio.image}`}
+                    src={`${process.env.PUBLIC_URL}/home/portfolio/${portfolio.image}`}
                     alt={portfolio.link}
                   />
                 </SwiperSlide>

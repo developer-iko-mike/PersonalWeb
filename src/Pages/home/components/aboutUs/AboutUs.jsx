@@ -23,7 +23,7 @@ const AboutUs = () => {
         <div className="about_warraper rw bgsection djsb">
           <div className="about_cover cl-12 cl-lg-6">
             <img
-              src="/home/aboutUs/about-us-man.jpg"
+              src={`${process.env.PUBLIC_URL}/home/aboutUs/aboutUsImage.jpg`}
               alt="about us man"
               className="about_image w100 h100 of"
             />
@@ -48,7 +48,11 @@ const AboutUs = () => {
               ))}
             </ul>
             <div className="about_content__btnWrapper dac g3">
-              <BtnPerson title={"Hire me"} elam={"a"} classNames="bgmain about_content__btn" />
+              <BtnPerson
+                title={"Hire me"}
+                elam={"a"}
+                classNames="bgmain about_content__btn"
+              />
               <BtnPerson
                 title={"get resume"}
                 elam={"a"}
